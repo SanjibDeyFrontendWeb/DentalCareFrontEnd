@@ -21,16 +21,16 @@ export const clinic = {
   phone: '+91 98300 12345', // shown to visitors
   phoneHref: '+919830012345', // used in tel: links
   whatsapp: '919830012345', // used in wa.me links (no +)
-  email: 'hello@dentalcare-demo.in',
+  email: 'hello@dentalcare.in',
   address: {
-    line1: '2nd Floor, 14 Lake View Road',
-    line2: 'Near Rabindra Sarobar, Kolkata 700029',
-    city: 'Kolkata',
+    line1: '9, Gopinath Marg, New Colony,',
+    line2: 'Near Panch Batti, Jaipur – 302 001',
+    city: 'Jaipur',
   },
   // Google Maps → Share → Embed a map → copy the src="" value
   mapEmbedUrl:
-    'https://www.google.com/maps?q=Rabindra+Sarobar,+Kolkata&output=embed',
-  directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Rabindra+Sarobar+Kolkata',
+    'https://www.google.com/maps?q=9,+Gopinath+Marg,+New+Colony,+Panch+Batti,+Jaipur,+Rajasthan+302001,+India&output=embed',
+  directionsUrl: 'https://www.google.com/maps?q=9,+Gopinath+Marg,+New+Colony,+Panch+Batti,+Jaipur,+Rajasthan+302001,+India&output=embed',
   timezone: 'Asia/Kolkata',
 
   /**
