@@ -2,7 +2,7 @@
 
 A responsive, accessible, dark-mode-ready website for a local dental clinic, built with **HTML5, Tailwind CSS and vanilla JavaScript** (ES modules, no framework). Includes an end-to-end appointment booking flow (demo mode until a backend is connected).
 
-> **Live demo:** _add your Netlify/Vercel URL here_ · **GitHub:** _add your repository URL here_
+> **Live demo:** (https://dentalcarefrontend.netlify.app/) · **GitHub:** (https://github.com/SanjibDeyFrontendWeb/DentalCareFrontEnd.git)
 
 ## Pages
 
