@@ -1,8 +1,9 @@
 // Lightweight review carousel (no library).
 // Layout and swiping come from CSS scroll-snap; this file adds the buttons,
-// dots, keyboard arrows and a pausable autoplay.
+// dots, keyboard arrows and an autoplay that pauses on hover/focus and stops
+// once the visitor takes control.
 // Markup hooks: [data-carousel] > [data-carousel-track] > [data-carousel-slide],
-// plus [data-carousel-dots], [data-carousel-prev|next|pause].
+// plus [data-carousel-dots], [data-carousel-prev|next].
 
 const AUTOPLAY_MS = 6000;
 
@@ -12,7 +13,6 @@ function setupCarousel(root) {
   const dotsWrap = root.querySelector('[data-carousel-dots]');
   const prevBtn = root.querySelector('[data-carousel-prev]');
   const nextBtn = root.querySelector('[data-carousel-next]');
-  const pauseBtn = root.querySelector('[data-carousel-pause]');
   if (!track || slides.length === 0) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -105,7 +105,7 @@ function setupCarousel(root) {
     }
   });
 
-  /* ---------- autoplay (off for reduced motion; pausable) ---------- */
+  /* ---------- autoplay (off for reduced motion) ---------- */
   let timer = null;
   let userPaused = reduceMotion;
   let hovering = false;
@@ -118,26 +118,11 @@ function setupCarousel(root) {
     clearInterval(timer);
     timer = null;
   };
-  // A deliberate interaction (button, dot, arrow key) turns autoplay off for good.
+  // A deliberate interaction (button, dot, arrow key, swipe) turns autoplay off for good.
   const stop = () => {
     userPaused = true;
     halt();
-    syncPauseBtn();
   };
-
-  const syncPauseBtn = () => {
-    if (!pauseBtn) return;
-    pauseBtn.setAttribute('aria-pressed', String(userPaused));
-    pauseBtn.setAttribute('aria-label', userPaused ? 'Start automatic scrolling' : 'Pause automatic scrolling');
-    pauseBtn.querySelector('[data-icon-pause]').hidden = userPaused;
-    pauseBtn.querySelector('[data-icon-play]').hidden = !userPaused;
-  };
-
-  pauseBtn?.addEventListener('click', () => {
-    userPaused = !userPaused;
-    syncPauseBtn();
-    userPaused ? halt() : start();
-  });
 
   root.addEventListener('pointerenter', () => {
     hovering = true;
@@ -172,8 +157,6 @@ function setupCarousel(root) {
   });
 
   buildDots();
-  syncPauseBtn();
-  if (reduceMotion && pauseBtn) pauseBtn.hidden = true; // nothing to pause
   start();
 }
 

@@ -20,7 +20,7 @@ A responsive, accessible, dark-mode-ready website for a local dental clinic, bui
 - **Tailwind CSS** build (no CDN). Brand palette taken from the logo: royal blue `#0d5bc9` (primary), amber → orange `#fdab12 → #e46b00` (accent), cool light surfaces and deep-navy dark mode
 - **Full-screen layout**: 100svh split hero, edge-to-edge sections, full-bleed photo page headers, full-width map and CTA, fluid container up to 1440px
 - **Motion & polish** (`src/js/effects.js`): scroll-reveal, count-up stats, cursor spotlight on cards, services marquee, reading-progress bar, floating glass header, back-to-top, button shine and arrow-nudge hovers, smooth anchor scrolling. All of it switches off under `prefers-reduced-motion`
-- **Reviews carousel** (`src/js/carousel.js`): dependency-free, built on CSS scroll-snap: swipe, arrow buttons, dots, keyboard arrows and a pausable autoplay (off under `prefers-reduced-motion`)
+- **Reviews carousel** (`src/js/carousel.js`): dependency-free, built on CSS scroll-snap: swipe, arrow buttons, dots, keyboard arrows and an autoplay that pauses on hover or focus and stops once the visitor uses the controls (off under `prefers-reduced-motion`)
 - **Dark mode**: manual toggle, saved to `localStorage`, follows the OS setting until the visitor chooses
 - **Mobile-first**: tested at 320, 375, 768, 1024 and 1280 px with no horizontal scroll; side-drawer menu with overlay, Escape, focus trap and scroll lock; sticky mobile Call/Book bar
 - **Accessibility**: one H1 per page, landmarks, skip link, labelled inputs, inline errors with `aria-invalid`, live regions, visible focus rings in both themes, `prefers-reduced-motion` support
