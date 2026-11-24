@@ -8,7 +8,7 @@ A responsive, accessible, dark-mode-ready website for a local dental clinic, bui
 
 | Route | Purpose |
 |---|---|
-| `index.html` | Hero, trust highlights, **Advanced & Affordable Dental Treatments** with pricing table, featured services (CSS Grid), **Why choose us** (Flexbox), booking steps, testimonials, hours + CTA |
+| `index.html` | Hero, trust highlights, **Advanced & Affordable Dental Treatments** with pricing table, featured services (CSS Grid), **Why choose us** (Flexbox), booking steps, testimonials carousel, hours + CTA |
 | `services.html` | Service card grid (1 / 2 / 3 columns), inclusions, indicative prices, durations, pricing note, FAQ |
 | `gallery.html` | Responsive image grid, keyboard-accessible category filters, lightbox (Esc, ← →, focus trap) |
 | `contact.html` | Accessible form (name, phone, service dropdown, message), tel/mailto/WhatsApp links, hours, emergency note, Google Map + directions fallback |
@@ -20,6 +20,7 @@ A responsive, accessible, dark-mode-ready website for a local dental clinic, bui
 - **Tailwind CSS** build (no CDN). Brand palette taken from the logo: royal blue `#0d5bc9` (primary), amber → orange `#fdab12 → #e46b00` (accent), cool light surfaces and deep-navy dark mode
 - **Full-screen layout**: 100svh split hero, edge-to-edge sections, full-bleed photo page headers, full-width map and CTA, fluid container up to 1440px
 - **Motion & polish** (`src/js/effects.js`): scroll-reveal, count-up stats, cursor spotlight on cards, services marquee, reading-progress bar, floating glass header, back-to-top, button shine and arrow-nudge hovers, smooth anchor scrolling. All of it switches off under `prefers-reduced-motion`
+- **Reviews carousel** (`src/js/carousel.js`): dependency-free, built on CSS scroll-snap: swipe, arrow buttons, dots, keyboard arrows and a pausable autoplay (off under `prefers-reduced-motion`)
 - **Dark mode**: manual toggle, saved to `localStorage`, follows the OS setting until the visitor chooses
 - **Mobile-first**: tested at 320, 375, 768, 1024 and 1280 px with no horizontal scroll; side-drawer menu with overlay, Escape, focus trap and scroll lock; sticky mobile Call/Book bar
 - **Accessibility**: one H1 per page, landmarks, skip link, labelled inputs, inline errors with `aria-invalid`, live regions, visible focus rings in both themes, `prefers-reduced-motion` support
@@ -57,6 +58,7 @@ ES modules need a web server; opening the HTML file directly with `file://` will
 │   │   ├── main.js           ← entry: binds config to the page, renders services & hours
 │   │   ├── theme-init.js     ← sets theme before first paint (no flash)
 │   │   ├── theme.js, navigation.js, forms.js, gallery.js, booking.js
+│   │   ├── carousel.js       ← reviews carousel (scroll-snap + buttons, dots, autoplay)
 │   │   ├── effects.js        ← scroll reveal, header state, progress bar, count-up, spotlight
 │   │   ├── schedule.js       ← timezone helpers + demo availability
 │   │   └── render.js         ← shared HTML renderers (service card, pricing rows, hours)
@@ -78,7 +80,7 @@ ES modules need a web server; opening the HTML file directly with `file://` will
 - [ ] Opening hours, weekly closed day (demo: Thursday) and holiday list
 - [ ] All prices (sample INR values) and treatment durations
 - [ ] All photos (Unsplash demo images) with licensed clinic photography
-- [ ] Testimonials (currently labelled "Sample reviews"); use only genuine reviews shared with permission
+- [ ] Testimonials and reviewer photos are demo content (stock photos from Unsplash); replace with genuine reviews and photos shared with the patients' permission
 - [ ] Claims in highlights and "Why choose us" (equipment, sterilisation, EMI)
 - [ ] Privacy notice text (template)
 - [ ] Social media links

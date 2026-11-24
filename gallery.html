@@ -236,9 +236,19 @@
       </div>
     </div>
 
-    <section class="relative isolate overflow-hidden bg-brand-gradient py-20 text-white sm:py-28" aria-labelledby="cta-title">
-      <div class="pointer-events-none absolute -right-24 -top-24 -z-10 h-96 w-96 animate-blob rounded-full bg-accent-400/40 blur-3xl" aria-hidden="true"></div>
-      <div class="pointer-events-none absolute -bottom-32 left-1/4 -z-10 h-96 w-96 animate-blob rounded-full bg-brand-300/30 blur-3xl [animation-delay:-6s]" aria-hidden="true"></div>
+    <section class="bg-white px-3 pb-3 dark:bg-night-900" aria-labelledby="cta-title">
+     <div class="relative isolate overflow-hidden rounded-[2rem] bg-[linear-gradient(125deg,#0b4aa6_0%,#0d5bc9_38%,#0f3f87_72%,#0d2247_100%)] py-20 text-white shadow-lift ring-1 ring-white/10 sm:rounded-[2.75rem] sm:py-28">
+      <!-- fine grid, fading out from the left -->
+      <div class="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_70%_80%_at_25%_40%,black,transparent_75%)]" aria-hidden="true"></div>
+      <!-- soft light glow top-left, deep shade bottom-right -->
+      <div class="pointer-events-none absolute -left-40 -top-48 -z-10 h-[34rem] w-[34rem] rounded-full bg-brand-300/35 blur-[110px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -bottom-56 -right-40 -z-10 h-[36rem] w-[36rem] rounded-full bg-night-950/60 blur-[120px]" aria-hidden="true"></div>
+      <!-- concentric rings behind the hours card -->
+      <div class="pointer-events-none absolute right-[-8rem] top-1/2 -z-10 hidden h-[44rem] w-[44rem] -translate-y-1/2 rounded-full border border-white/[0.08] lg:block" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute right-[-2rem] top-1/2 -z-10 hidden h-[32rem] w-[32rem] -translate-y-1/2 rounded-full border border-white/[0.10] lg:block" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute right-[4rem] top-1/2 -z-10 hidden h-[20rem] w-[20rem] -translate-y-1/2 rounded-full border border-white/[0.12] lg:block" aria-hidden="true"></div>
+      <!-- warm hairline along the top edge, echoing the logo's orange -->
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-300/80 to-transparent" aria-hidden="true"></div>
       <div class="container grid items-center gap-12 lg:grid-cols-12">
         <div class="lg:col-span-7" data-reveal="left">
           <p class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] backdrop-blur"><span class="eyebrow-dot" aria-hidden="true"></span>Same-week appointments</p>
@@ -250,7 +260,7 @@
           </div>
           <p class="mt-9 flex items-start gap-2 text-sm text-white/80"><svg aria-hidden="true" class="h-[1.1rem] w-[1.1rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span><span data-clinic="address1">9, Gopinath Marg, New Colony,</span>, <span data-clinic="address2">Near Panch Batti, Jaipur – 302 001</span></span></p>
         </div>
-        <div class="rounded-[2rem] border border-white/20 bg-white/10 p-7 shadow-2xl backdrop-blur-xl sm:p-9 lg:col-span-5" data-reveal="right">
+        <div class="rounded-[2rem] border border-white/15 bg-white/[0.08] p-7 shadow-[0_30px_80px_-20px_rgba(6,11,22,.55)] backdrop-blur-xl sm:p-9 lg:col-span-5" data-reveal="right">
           <h3 class="flex items-center gap-2 text-xl font-semibold text-white"><svg aria-hidden="true" class="h-[1.1rem] w-[1.1rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Opening hours</h3>
           <p class="mt-2 flex items-center gap-2 text-sm text-white/90" data-open-status>Open Mon–Sat</p>
           <ul class="mt-4 divide-y divide-white/10 text-sm text-white/90" data-hours-list="compact">
@@ -259,6 +269,7 @@
           <p class="mt-4 text-xs text-white/70" data-clinic="hoursNote">Closed on national holidays. Emergency? Call us — we will guide you.</p>
         </div>
       </div>
+     </div>
     </section>
 
   </main>

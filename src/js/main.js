@@ -11,6 +11,7 @@ import { initContactForm } from './forms.js';
 import { initGallery } from './gallery.js';
 import { initBooking } from './booking.js';
 import { initEffects } from './effects.js';
+import { initCarousels } from './carousel.js';
 
 /* ---------- 1. Clinic details from the central config ---------- */
 function bindClinic() {
@@ -89,4 +90,5 @@ renderNextSlot();
 initContactForm();
 initGallery();
 initBooking();
+initCarousels();
 initEffects(); // last, so re-rendered sections are observed
